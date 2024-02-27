@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #007bff;
+    }
+    
+    form {
+        margin-top: 20px;
+    }
+    
+    form div {
+        margin-bottom: 10px;
+    }
+    
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('upload_file') }}"><h1>Upload</h1></a>
+
+    <!-- Clipboard Text Area -->
+    <form method="POST" action="/">
+        <div>
+            <label for="clipboard">Clipboard:</label><br>
+            <textarea id="clipboard" name="clipboard" rows="10" cols="100">{{ clipboard }}</textarea>
+        </div>
+        <button type="submit">Save Clipboard</button>
+    </form>
+
+</body>
+</html>
